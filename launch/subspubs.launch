@@ -1,0 +1,4 @@
+<launch>
+  <node name="pubs_node" pkg="tutorial" type="pubs.py" output="screen"/>
+  <node name="subs_node" pkg="tutorial" type="subs.py" output="screen"/>
+</launch>

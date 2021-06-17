@@ -1,0 +1,19 @@
+<launch>
+        <!-- Publish motor speed -->
+        <node pkg="spero" name="motor_control" type="motor_control.py" />
+        
+        <!-- Subscribe motor speed -->
+        <node pkg="i2cpwm_board" name="i2cpwm_board_node" type="i2cpwm_board" output="screen" launch-prefix="sudo -E "/>
+        
+        <!-- Subscribe UV-C status -->
+        <node pkg="spero" name="uvc_control" type="uvc_control.py" output="screen" />
+                
+        <!-- Subscribe operator command -->
+        <node pkg="spero" name="operator" type="operator.py" />
+        
+        <!-- Publish & Subscribe distance sensor -->
+        <node pkg="spero" name="distance_sensor" type="distance_sensor.py" />
+        
+        <!-- Publish & Subscribe operator command -->
+        <node pkg="spero" name="motion_sensor" type="motion_sensor.py"/>
+</launch>
